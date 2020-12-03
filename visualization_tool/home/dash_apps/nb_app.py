@@ -1,5 +1,6 @@
 import time
-import dash
+# import dash
+from django_plotly_dash import DjangoDash
 import dash_core_components as dcc
 import dash_html_components as html
 import numpy as np
@@ -8,12 +9,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn import datasets
 
-import utils.dash_reusable_components as drc
-import utils.figures as figs
-from utils.ml_resources import Model, Dataset
+import visualization_tool.home.dash_apps.utils.dash_reusable_components as drc
+import visualization_tool.home.dash_apps.utils.figures as figs
+from visualization_tool.home.dash_apps.utils.ml_resources import Model, Dataset
 
-app = dash.Dash(
-    '__name__',
+app = DjangoDash(
+    'GaussianNB',
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
     ],
@@ -257,6 +258,9 @@ def update_gnb_graph(
     ]
 
 
+"""
+# For Django this is commented out
 # Running the server
 if __name__ == "__main__":
     app.run_server(debug=True)
+"""
