@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'channels',
+    'channels_redis',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'visualization_tool.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,6 +128,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+ASGI_APPLICATION = 'visualization_tool.routing.application'
 
 
 # Static files (CSS, JavaScript, Images)
