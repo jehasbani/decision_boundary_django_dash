@@ -9,17 +9,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn import datasets
 
-import visualization_tool.home.dash_apps.utils.dash_reusable_components as drc
-import visualization_tool.home.dash_apps.utils.figures as figs
-from visualization_tool.home.dash_apps.utils.ml_resources import Model, Dataset
+import home.dash_apps.utils.dash_reusable_components as drc
+import home.dash_apps.utils.figures as figs
+from home.dash_apps.utils.ml_resources import Model, Dataset
 
 app = DjangoDash(
     'GaussianNB',
-    meta_tags=[
+)
+
+"""
+meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
     ],
-)
-server = app.server
+"""
+# server = app.server
 
 
 app.layout = html.Div(
